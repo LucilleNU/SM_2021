@@ -1,37 +1,38 @@
+"""System module."""
 import random
 choices = ["Rock", "Paper", "Scissors"]
 computer = random.choice(choices)
-player = False
-cpu_score = 0
-player_score = 0
+PLAYER = False
+CPU_SCORE = 0
+PLAYER_SCORE = 0
 while True:
-    player = input("Rock, Paper or  Scissors?").capitalize()
+    PLAYER = input("Rock, Paper or  Scissors?").capitalize()
     ## Conditions of Rock,Paper and Scissors
-    if player == computer:
+    if PLAYER == computer:
         print("Tie!")
-    elif player == "Rock":
+    elif PLAYER == "Rock":
         if computer == "Paper":
-            print("You lose!", computer, "covers", player)
-            cpu_score+=1
+            print("You lose!", computer, "covers", PLAYER)
+            CPU_SCORE+=1
         else:
-            print("You win!", player, "smashes", computer)
-            player_score+=1
-    elif player == "Paper":
+            print("You win!", PLAYER, "smashes", computer)
+            PLAYER_SCORE+=1
+    elif PLAYER == "Paper":
         if computer == "Scissors":
-            print("You lose!", computer, "cut", player)
-            cpu_score+=1
+            print("You lose!", computer, "cut", PLAYER)
+            CPU_SCORE+=1
         else:
-            print("You win!", player, "covers", computer)
-            player_score+=1
-    elif player == "Scissors":
+            print("You win!", PLAYER, "covers", computer)
+            PLAYER_SCORE+=1
+    elif PLAYER == "Scissors":
         if computer == "Rock":
-            print("You lose...", computer, "smashes", player)
-            cpu_score+=1
+            print("You lose...", computer, "smashes", PLAYER)
+            CPU_SCORE+=1
         else:
-            print("You win!", player, "cut", computer)
-            player_score+=1
-    elif player=='End':
+            print("You win!", PLAYER, "cut", computer)
+            PLAYER_SCORE+=1
+    elif PLAYER=='End':
         print("Final Scores:")
-        print(f"CPU:{cpu_score}")
-        print(f"Plaer:{player_score}")
+        print(f"CPU:{CPU_SCORE}")
+        print(f"Plaer:{PLAYER_SCORE}")
         break
